@@ -248,7 +248,7 @@ public class AddressRepositoryImpl implements AddressRepository {
 
 	@Override
 	public void save(Address address) {
-		final String SQL = "INSERT INTO ADDRESS(ID, CellPhoneNumber, name, email, birthday) VALUES ((select next value for ADDRESS_SEQ from ADDRESS), ?, ?, ?, ?)";
+		final String SQL = "INSERT INTO ADDRESS(CellPhoneNumber, name, email, birthday) VALUES (?, ?, ?, ?)";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 
