@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ 	  	xmlns:jdbc="http://www.springframework.org/schema/jdbc"	   
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 <!-- 	<bean id="dataSource" -->
@@ -13,16 +15,20 @@
 <!-- 		<property name="password" value="gramer2188"></property> -->
 <!-- 	</bean> -->
 
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="org.hsqldb.jdbcDriver" />
-		<property name="url" value="jdbc:hsqldb:file:testdb;shutdown=true" />
-		<property name="username" value="SA" />
-		<property name="password" value="" />
-		<property name="initialSize" value="1" />
-		<property name="maxActive" value="5" />
-		<property name="poolPreparedStatements" value="true" />
-		<property name="maxOpenPreparedStatements" value="10" />
-	</bean>
+<!-- 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"> -->
+<!-- 		<property name="driverClassName" value="org.hsqldb.jdbcDriver" /> -->
+<!-- 		<property name="url" value="jdbc:hsqldb:file:testdb;shutdown=true" /> -->
+<!-- 		<property name="username" value="SA" /> -->
+<!-- 		<property name="password" value="" /> -->
+<!-- 		<property name="initialSize" value="1" /> -->
+<!-- 		<property name="maxActive" value="3" /> -->
+<!-- 		<property name="poolPreparedStatements" value="true" /> -->
+<!-- 		<property name="maxOpenPreparedStatements" value="10" /> -->
+<!-- 	</bean> -->
+
+	<jdbc:embedded-database id="dataSource" type="HSQL">
+	    <jdbc:script location="classpath:schema.sql"/>
+	</jdbc:embedded-database>
 
 	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="dataSource"></property>

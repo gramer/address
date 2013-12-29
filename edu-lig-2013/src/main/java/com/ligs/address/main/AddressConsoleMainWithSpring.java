@@ -11,7 +11,7 @@ import com.ligs.address.view.AddressConsoleView;
 public class AddressConsoleMainWithSpring {
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		System.setOut(new PrintStream(System.out, true, "MS949"));		
+		System.setOut(new PrintStream(System.out, true, "UTF8"));		
 		
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		AddressController controller = (AddressController) context.getBean("addressController");

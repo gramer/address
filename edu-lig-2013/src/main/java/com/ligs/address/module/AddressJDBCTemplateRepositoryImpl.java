@@ -76,7 +76,7 @@ public class AddressJDBCTemplateRepositoryImpl implements AddressRepository {
 
 	@Override
 	public void save(final Address address) {
-		final String SQL = "INSERT INTO ADDRESS(ID, CellPhoneNumber, name, email, birthday) VALUES (ADDRESS_SEQ.NEXTVAL, ?, ?, ?, ?)";
+		final String SQL = "INSERT INTO ADDRESS(ID, CellPhoneNumber, name, email, birthday) VALUES ((select next value for ADDRESS_SEQ from ADDRESS), ?, ?, ?, ?)";
 		template.update(SQL, new PreparedStatementSetter() {
 
 			@Override
