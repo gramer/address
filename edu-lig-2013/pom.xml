@@ -146,6 +146,16 @@
 	<build>
 		<pluginManagement>
 			<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>findbugs-maven-plugin</artifactId>
+				<version>2.5.2</version>
+				<configuration>
+					<findbugsXmlOutput>true</findbugsXmlOutput>
+					<findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+					<xmlOutput>true</xmlOutput>
+				</configuration>
+			</plugin>
 				<plugin>
 					<artifactId>maven-assembly-plugin</artifactId>
 					<configuration>
@@ -155,7 +165,7 @@
 						<finalName>AddressConsole</finalName>
 						<archive>
 							<manifest>
-								<mainClass>com.ligs.edu.kkj.address.view.AddressConsoleMain</mainClass>
+								<mainClass>com.ligs.edu.kkj.address.main.AddressConsoleMainWithSpring</mainClass>
 							</manifest>
 						</archive>
 					</configuration>
