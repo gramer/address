@@ -5,6 +5,8 @@
 	<artifactId>edu-lig-2013</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<spring-version>3.2.0.RELEASE</spring-version>
 	</properties>
 
