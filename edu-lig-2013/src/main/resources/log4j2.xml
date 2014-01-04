@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appenders>
+		<Console name="STDOUT" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%5p] %C:%L - %m%n" />
+		</Console>
+	</appenders>
+	
+	<loggers>
+		<logger name="com.ligs.address" level="info" />
+		
+		<logger name="org.springframework.core" level="info" />
+		<logger name="org.springframework.beans" level="info" />
+		<logger name="org.springframework.context" level="info" />
+		<logger name="org.springframework.web" level="info" />
+	
+		<root level="info">
+			<appender-ref ref="STDOUT" />
+		</root>
+	</loggers>
+
+</configuration>

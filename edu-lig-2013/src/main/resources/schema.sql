@@ -8,3 +8,5 @@ CREATE TABLE ADDRESS (
 	email varchar(100),
 	birthday varchar(100)
 );
+
+insert into address(CellPhoneNumber, name) values('010-3526-2186', 'kkj');
