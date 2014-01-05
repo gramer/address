@@ -4,6 +4,7 @@
     Sencha Cmd when upgrading.
 */
 
+Ext.Loader.setConfig({ disableCaching: false, enabled: true });	
 Ext.application({
     name: 'Address',
 
